@@ -3,6 +3,8 @@ constructor(){
   this.input = createInput("name");
   this.button = createButton('play');
   this.greeting = createElement('h3');
+  this.reset = createButton('reset');
+  
 }
 hide(){
 this.greeting.hide();
@@ -16,6 +18,12 @@ title.position(displayWidth/2 -100,0);
 
  this.input.position(displayWidth/2 -100, displayHeight/2 -150);
 this.button.position(displayWidth/2 -30, displayHeight/2 -100);
+this.reset.position(displayWidth-100,20)
+this.reset.mousePressed(()=>{
+player.updateCount(0);
+game.update(0);
+player.destroyEach();
+})
 this.button.mousePressed(()=>{
 this.input.hide();
 this.button.hide();
